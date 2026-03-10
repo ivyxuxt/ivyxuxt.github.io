@@ -8,7 +8,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "GenAI Lab — Continual Learning Agents",
+    title: "Continual Learning Agents",
     bullets: [
       "Built a retrieval-based agent using Vision-Language Models to process automotive repair order documents",
       "Designed a prompt-optimization framework with iterative feedback loops to score and improve agent outputs",
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     coverImage: "/covers/genai.jpg",
   },
   {
-    title: "Analytics Lab — Fraud Prevention in Commercial Lending",
+    title: "Fraud Prevention in Commercial Lending",
     bullets: [
       "Built end-to-end fraud detection pipelines in Python for early-stage commercial loan screening",
       "Trained logistic regression and CatBoost on highly imbalanced data, engineering 20+ behavioral features across bank activity and credit risk signals",
@@ -47,6 +47,7 @@ export const projects: Project[] = [
         label: "Colab",
         href: "https://colab.research.google.com/drive/1QJJTQGDohRoLAtjUem0IS-3HbosLQ05s",
       },
+      { label: "Report", href: "/spam-report.pdf" },
     ],
     coverImage: "/covers/spam.jpg",
   },
@@ -62,6 +63,7 @@ export const projects: Project[] = [
         label: "GitHub",
         href: "https://github.com/ivyxuxt/Predicting-Parkinson-s-Disease-Progression",
       },
+      { label: "Report", href: "/parkinsons-report.pdf" },
     ],
     coverImage: "/covers/parkinsons.jpg",
   },
@@ -77,6 +79,7 @@ export const projects: Project[] = [
         label: "GitHub",
         href: "https://github.com/hanna0601/ev-charging-optimization",
       },
+      { label: "Report", href: "/ev-report.pdf" },
     ],
     coverImage: "/covers/ev.jpg",
   },

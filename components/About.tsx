@@ -1,11 +1,5 @@
 "use client";
 
-const skills = [
-  "Python", "R", "SQL", "PyTorch", "Scikit-learn",
-  "XGBoost", "CatBoost", "Gurobi", "NLP",
-  "Causal Inference", "Machine Learning", "Optimization",
-];
-
 const links = [
   { label: "GitHub", href: "https://github.com/ivyxuxt", external: true },
   { label: "LinkedIn", href: "https://linkedin.com/in/ivyxuxt", external: true },
@@ -36,20 +30,6 @@ export default function About() {
             business problems. In her free time, she enjoys snowboarding, doing pottery, and exploring
             restaurants with friends.
           </p>
-          <div className="mb-8">
-            <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-3">Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="text-sm px-3 py-1 rounded-full font-medium"
-                  style={{ backgroundColor: "#B4DEBD", color: "#1e4a2a", border: "1px solid #91c4aa" }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
           {/* Identity + links */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-4" style={{ borderTop: "1px solid #e2e8f0" }}>
             <div className="text-sm text-slate-500">
