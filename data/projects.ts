@@ -1,15 +1,18 @@
 export interface Project {
   title: string;
-  description: string;
+  bullets: string[];
   tags: string[];
   links: { label: string; href: string }[];
+  coverImage: string;
 }
 
 export const projects: Project[] = [
   {
     title: "GenAI Lab — Continual Learning Agents",
-    description:
-      "Building a retrieval-based agent using Vision-Language Models to process repair order documents. Designing a prompt-optimization framework to score agent outputs and improve system prompts using iterative feedback loops.",
+    bullets: [
+      "Built a retrieval-based agent using Vision-Language Models to process automotive repair order documents",
+      "Designed a prompt-optimization framework with iterative feedback loops to score and improve agent outputs",
+    ],
     tags: ["GenAI", "Prompt Optimization", "Python"],
     links: [
       {
@@ -17,21 +20,27 @@ export const projects: Project[] = [
         href: "https://github.com/barathvelmu/continual-learning-agents-research",
       },
     ],
+    coverImage: "/covers/genai.jpg",
   },
   {
     title: "Analytics Lab — Fraud Prevention in Commercial Lending",
-    description:
-      "Built end-to-end fraud detection pipelines in Python for early-stage screening. Trained and tuned logistic regression and CatBoost models on highly imbalanced fraud data, engineering 20+ behavioral features capturing bank account activity and credit risk signals.",
+    bullets: [
+      "Built end-to-end fraud detection pipelines in Python for early-stage commercial loan screening",
+      "Trained logistic regression and CatBoost on highly imbalanced data, engineering 20+ behavioral features across bank activity and credit risk signals",
+    ],
     tags: ["Feature Engineering", "Machine Learning", "FinTech", "Python"],
     links: [
       { label: "GitHub", href: "https://github.com/Linda0840/Alab" },
       { label: "Report", href: "/fraud-report.pdf" },
     ],
+    coverImage: "/covers/fraud.jpg",
   },
   {
     title: "Email Spam Detection",
-    description:
-      "Improved email spam detection accuracy by comparing TF-IDF + Logistic Regression, BERT, and Hierarchical Attention Network (HAN) approaches.",
+    bullets: [
+      "Compared TF-IDF + Logistic Regression, BERT, and Hierarchical Attention Network (HAN) for spam classification",
+      "Improved detection accuracy by leveraging contextual embeddings over traditional bag-of-words baselines",
+    ],
     tags: ["NLP", "BERT", "PyTorch", "Python"],
     links: [
       {
@@ -39,11 +48,14 @@ export const projects: Project[] = [
         href: "https://colab.research.google.com/drive/1QJJTQGDohRoLAtjUem0IS-3HbosLQ05s",
       },
     ],
+    coverImage: "/covers/spam.jpg",
   },
   {
     title: "Parkinson's Disease Severity Prediction",
-    description:
-      "Built an ML pipeline predicting Parkinson's disease severity from acoustic features. Compared OLS, LASSO, MIO sparse regression, CART, XGBoost, and Regression Trees for UPDRS prediction.",
+    bullets: [
+      "Built an ML pipeline predicting Parkinson's disease severity from acoustic voice features",
+      "Benchmarked OLS, LASSO, MIO sparse regression, CART, XGBoost, and Regression Trees for UPDRS score prediction",
+    ],
     tags: ["Interpretable ML", "Optimization", "Python", "R"],
     links: [
       {
@@ -51,11 +63,14 @@ export const projects: Project[] = [
         href: "https://github.com/ivyxuxt/Predicting-Parkinson-s-Disease-Progression",
       },
     ],
+    coverImage: "/covers/parkinsons.jpg",
   },
   {
     title: "EV Charging Infrastructure Optimization in NY State",
-    description:
-      "Relocated EV charging ports in New York under budget, demand, and traffic constraints. Applied adaptive optimization to plan a $1B EV charging network expansion across NY ZIP codes.",
+    bullets: [
+      "Optimally relocated EV charging ports across New York under budget, demand, and traffic constraints",
+      "Applied adaptive MIP optimization to plan a $1B charging network expansion across NY ZIP codes",
+    ],
     tags: ["MIP", "Gurobi", "Operations Research", "Python"],
     links: [
       {
@@ -63,12 +78,16 @@ export const projects: Project[] = [
         href: "https://github.com/hanna0601/ev-charging-optimization",
       },
     ],
+    coverImage: "/covers/ev.jpg",
   },
   {
     title: "Sustainable Farming in India",
-    description:
-      "Applied causal inference and regression models to farmer survey data to estimate treatment effects of financial incentives on Direct-Seeded Rice adoption. Conducted robustness and sensitivity analyses to assess model stability.",
+    bullets: [
+      "Applied causal inference and regression to farmer RCT data to estimate effects of financial incentives on Direct-Seeded Rice adoption",
+      "Conducted robustness checks and sensitivity analyses to validate treatment effect estimates",
+    ],
     tags: ["Causal Inference", "RCT", "Experimental Design"],
     links: [{ label: "Slides", href: "/farming-paper.pdf" }],
+    coverImage: "/covers/farming.jpg",
   },
 ];
