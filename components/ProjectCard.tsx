@@ -5,48 +5,53 @@ import { Project } from "@/data/projects";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div
-      className="flex flex-col rounded-2xl overflow-hidden h-full hover:-translate-y-1 transition-all duration-200"
-      style={{ backgroundColor: "#ffffff", border: "1.5px solid #91C4C3", boxShadow: "0 1px 4px rgba(128,161,186,0.08)" }}
-      onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 8px 24px rgba(128,161,186,0.18)")}
-      onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 1px 4px rgba(128,161,186,0.08)")}
+      className="flex flex-col rounded-3xl overflow-hidden h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+      style={{ backgroundColor: "#ffffff", border: "1.5px solid #e8e8e8" }}
     >
-      <img
-        src={project.coverImage}
-        alt={project.title}
-        className="w-full object-cover"
-        style={{ height: "160px" }}
-      />
-      <div className="flex flex-col gap-3 p-5 flex-1">
-        <h3 className="font-semibold text-slate-900 leading-snug">{project.title}</h3>
-        <ul className="text-sm text-slate-600 leading-relaxed flex-1 list-disc list-outside pl-4 space-y-1">
+      <div className="p-4 pb-0">
+        <img
+          src={project.coverImage}
+          alt={project.title}
+          className="w-full object-cover rounded-2xl"
+          style={{ aspectRatio: "4/3" }}
+        />
+      </div>
+
+      <div className="flex flex-col gap-3 p-6 flex-1">
+        <h3 className="font-bold text-xl text-[#1a1a1a] leading-snug text-center">
+          {project.title}
+        </h3>
+
+        <ul className="text-base text-[#666] leading-relaxed flex-1 list-disc list-outside pl-4 space-y-1">
           {project.bullets.map((b, i) => (
             <li key={i}>{b}</li>
           ))}
         </ul>
-        <div className="flex flex-wrap gap-1.5">
-          {project.tags.map((tag) => (
+
+        {/* All labels in one flowing row */}
+        <div className="flex flex-wrap gap-1.5 justify-center">
+          {[...project.industries, ...project.tags].map((label) => (
             <span
-              key={tag}
-              className="text-xs px-2.5 py-0.5 rounded-full font-medium"
-              style={{ backgroundColor: "#B4DEBD", color: "#1e4a2a", border: "1px solid #91c4aa" }}
+              key={label}
+              className="text-sm px-3 py-1 rounded-full font-medium"
+              style={{ backgroundColor: "#f2f2f2", color: "#555", border: "1px solid #e0e0e0" }}
             >
-              {tag}
+              {label}
             </span>
           ))}
         </div>
-        <div className="flex gap-3 pt-1">
+
+        {/* Link buttons */}
+        <div className="flex gap-3 pt-2 justify-center flex-wrap">
           {project.links.map((link) => (
             <a
               key={link.label}
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="text-xs font-medium underline underline-offset-2 transition-colors"
-              style={{ color: "#80A1BA" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#5a7a96")}
-              onMouseLeave={e => (e.currentTarget.style.color = "#80A1BA")}
+              className="px-5 py-2 rounded-full text-base font-semibold border-2 border-[#d0d0d0] text-[#555] hover:border-[#1a1a1a] hover:text-[#1a1a1a] transition-all duration-200"
             >
-              {link.label} →
+              {link.label}
             </a>
           ))}
         </div>

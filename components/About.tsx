@@ -1,58 +1,80 @@
 "use client";
 
-const links = [
-  { label: "GitHub", href: "https://github.com/ivyxuxt", external: true },
-  { label: "LinkedIn", href: "https://linkedin.com/in/ivyxuxt", external: true },
-  { label: "Email", href: "mailto:ivyxu127@mit.edu", external: false },
-  { label: "CV", href: "/resume.pdf", external: true },
-];
-
 export default function About() {
   return (
-    <section id="about" className="py-16 px-6 max-w-5xl mx-auto" style={{ borderTop: "1px solid #91C4C3" }}>
-      <h2 className="text-2xl font-bold text-slate-900 mb-8">About</h2>
-      <div className="flex gap-8 items-start">
+    <section
+      id="about"
+      className="flex items-center px-8 md:px-16 lg:px-20 pt-24 pb-8"
+    >
+      <div className="max-w-[1510px] mx-auto w-full flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* Photo */}
-        <img
-          src="/profile.jpg"
-          alt="Ivy Xu"
-          className="w-36 h-36 rounded-full object-cover shrink-0 hidden sm:block"
-          style={{ outline: "3px solid #91C4C3", outlineOffset: "3px" }}
-        />
-        {/* Content */}
-        <div className="flex-1">
-          <p className="text-slate-600 leading-relaxed mb-8">
-            Ivy Xu is a Master of Business Analytics candidate at MIT Sloan School of Management,
-            graduating in August 2026. She graduated from Haverford College in May 2025 with a BS in
-            Mathematics and BA in Political Science, summa cum laude. Her work has spanned GenAI,
-            machine learning, optimization, and causal inference across industries including tech,
-            healthcare, and finance. Ivy enjoys applying data-driven solutions to tackle real-world
-            business problems. In her free time, she enjoys snowboarding, doing pottery, and exploring
-            restaurants with friends.
+        <div className="shrink-0">
+          <img
+            src="/profile.jpg"
+            alt="Ivy Xu"
+            className="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover"
+            style={{ border: "3px solid #e8e8e8" }}
+          />
+        </div>
+
+        {/* Text */}
+        <div>
+          <p style={{ fontFamily: "'Space Mono', monospace" }} className="text-sm text-[#999] mb-3">
+            Hello, I&apos;m
           </p>
-          {/* Identity + links */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-4" style={{ borderTop: "1px solid #e2e8f0" }}>
-            <div className="text-sm text-slate-500">
-              <span className="font-medium text-slate-700">Ivy Xu</span>
-              <span className="mx-2 text-slate-300">·</span>
-              Data Science &amp; Analytics · MIT MBAn
-            </div>
-            <div className="flex gap-4 sm:ml-auto">
-              {links.map(({ label, href, external }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
-                  className="text-sm transition-colors"
-                  style={{ color: "#94a3b8" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#80A1BA")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-3">
+            Ivy Xu
+          </h1>
+          <p style={{ fontFamily: "'Space Mono', monospace" }} className="text-base text-[#666] mb-6">
+            MIT MBAn Candidate · AI, Machine Learning, Data Science &amp; Analytics
+          </p>
+          <p className="text-[#555] leading-relaxed mb-6 text-base md:text-lg">
+            I am a Master of Business Analytics candidate at MIT Sloan School of Management,
+            graduating in August 2026. I graduated from Haverford College in May 2025. My work has
+            spanned GenAI, machine learning, optimization, and causal inference across industries
+            including tech, healthcare, and finance. I enjoy applying data-driven solutions to tackle
+            real-world business problems. In my free time, I enjoy snowboarding, doing pottery, and
+            exploring restaurants with friends.
+          </p>
+
+          {/* Pill buttons */}
+          <div className="flex flex-wrap gap-3 mb-4">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all duration-200"
+            >
+              Download CV
+            </a>
+            <a
+              href="mailto:ivyxu127@mit.edu"
+              className="px-6 py-2.5 rounded-full text-sm font-semibold border-2 border-[#d0d0d0] text-[#555] hover:border-[#1a1a1a] hover:text-[#1a1a1a] transition-all duration-200"
+            >
+              Email
+            </a>
+          </div>
+
+          {/* Social links */}
+          <div className="flex gap-5">
+            <a
+              href="https://github.com/ivyxuxt"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: "'Space Mono', monospace" }}
+              className="text-sm text-[#999] hover:text-[#1a1a1a] transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/ivyxuxt"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: "'Space Mono', monospace" }}
+              className="text-sm text-[#999] hover:text-[#1a1a1a] transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

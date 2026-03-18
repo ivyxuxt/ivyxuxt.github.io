@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
-import ProjectsGrid from "@/components/ProjectsGrid";
 import About from "@/components/About";
+import ProjectsGrid from "@/components/ProjectsGrid";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <Nav />
       <main className="pt-16">
-        <ProjectsGrid />
         <About />
+        <ProjectsGrid />
       </main>
       <Footer />
     </>
